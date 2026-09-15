@@ -11,7 +11,7 @@ model = ChatGoogleGenerativeAI(
     google_api_key=api_key
 )
 
-prompt="what is the capital city of USA?"
+prompt="Hello my name is Andx, what is your name?"
 res = model.invoke(prompt)
 
 print(res.content)
