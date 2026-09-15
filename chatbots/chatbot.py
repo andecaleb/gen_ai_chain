@@ -19,7 +19,7 @@ chat_history = [
 
 while True:  
     user_input=input("You: ")
-    chat_history.append(HumanMessage(content=user_input))
+    chat_history.append(HumanMessage(content=user_input))  #add the message to the chat history....
     if user_input.lower() == "exit": 
         break; 
     res = model.invoke(chat_history)            # invoke the gemini model on the chat history...... 
