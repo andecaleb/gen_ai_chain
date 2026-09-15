@@ -22,8 +22,9 @@ while True:
     chat_history.append(HumanMessage(content=user_input))
     if user_input.lower() == "exit": 
         break; 
-    res = model.invoke(chat_history)
-    chat_history.append(AIMessage(content=res.content))
-    print("Bot:", res.content)
+    res = model.invoke(chat_history)            # invoke the gemini model on the chat history...... 
+    ctxt = res.content[0]["text"]               # extract the text property of the firsst content item. 
+    chat_history.append(AIMessage(content=ctxt))# append it to the chat history... as an AI message.. 
+    print("Bot:", ctxt)
 
 print("chat history", chat_history)
