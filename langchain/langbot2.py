@@ -58,6 +58,9 @@ while user_input != "exit":
 
     # store the data in a text file.. so when you exit it still remembers... 
  
+#the messages keep growing.. and consuming more tokens... 
+#so always remove the older ones and only leave 5  - so you dont eat up tokens... 
+
 
 #with open("chatlogs.txt", "w") as file: 
 with open("chatlogs.txt", "a", encoding="utf-8") as file:
