@@ -22,7 +22,7 @@ class AgentState(TypedDict):
     messages: List[HumanMessage]
 
 def process(state:AgentState) -> AgentState: 
-    response = model.invoke(state["messages"])
+    response = model.invoke(state["messages"])   # llms are invoked in functions thats how it is used... 
     print(f"\nAI: {response.content[0]["text"]}")
     return state
 
@@ -35,7 +35,6 @@ graph.add_edge("process", END)
 agent = graph.compile()
 
 display(Image(agent.get_graph().draw_mermaid_png()))  #render the image output.. here.. 
-
 
 
 # this receives a message and stops..... 
