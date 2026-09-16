@@ -59,7 +59,8 @@ while user_input != "exit":
     # store the data in a text file.. so when you exit it still remembers... 
  
 
-with open("chatlogs.txt", "w") as file: 
+#with open("chatlogs.txt", "w") as file: 
+with open("chatlogs.txt", "a", encoding="utf-8") as file:
     file.write("Your conversation log : \n")
     for message in conversation_history: 
         if isinstance(message, HumanMessage): 
