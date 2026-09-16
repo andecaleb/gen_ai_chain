@@ -54,3 +54,18 @@ while user_input != "exit":
     conversation_history = res["messages"]    # replace the converation history completely.... 
 
     user_input = input("Enter Message: ")
+
+
+    # store the data in a text file.. so when you exit it still remembers... 
+ 
+
+with open("chatlogs.txt", "w") as file: 
+    file.write("Your conversation log : \n")
+    for message in conversation_history: 
+        if isinstance(message, HumanMessage): 
+            file.write(f"You: {message.content}\n")
+        elif isinstance(message, AIMessage): 
+            file.write(f"AI: {message.content}\n")
+    file.write("End of conversation")
+
+print("Conversation saved to chatlogs.txt")
