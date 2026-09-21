@@ -23,8 +23,6 @@ def add(a:int, b:int):
     """ this is an addition function """
     return a + b
 
-
-
 tools = [add]
 
 #setting up the agent/llm 
@@ -39,9 +37,7 @@ llm = model.bind_tools(tools)   # bind the tools to the llm model.
 
 def model_call(state:AgentState) -> AgentState: 
     system_prompt = SystemMessage(content="You are my AI Assistant, answer my calls..")
-
-    res = model.invoke([system_prompt] + state["messages"])   #system message + human messages. 
-
+    res = llm.invoke([system_prompt] + state["messages"])   #system message + human messages. 
     return {"messages": [res.content[0]["text"]]}   # updates the state here... since the reducer message handles everything.. 
 
 
