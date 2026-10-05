@@ -1,7 +1,11 @@
 import os
 from typing import TypedDict, List, Union
 from langchain_core.messages import HumanMessage, AIMessage
-from langchain_google_genai import ChatGoogleGenerativeAI 
+
+from langchain_google_genai import (ChatGoogleGenerativeAI,GoogleGenerativeAIEmbeddings )
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+
 from google.genai.types import AutomaticFunctionCallingConfig
 from langgraph.graph import StateGraph, START, END  
 

@@ -35,10 +35,12 @@ model = ChatGoogleGenerativeAI(
 
 llm = model.bind_tools(tools)   # bind the tools to the llm model. 
 
-def model_call(state:AgentState) -> AgentState: 
-    system_prompt = SystemMessage(content="You are my AI Assistant, answer my calls..")
-    res = llm.invoke([system_prompt] + state["messages"])   #system message + human messages. 
-    return {"messages": [res.content[0]["text"]]}   # updates the state here... since the reducer message handles everything.. 
+def model_call(state: AgentState) -> AgentState:
+    system_prompt = SystemMessage(
+        content="You are my AI Assistant, answer my calls."
+    )
+    res = llm.invoke([system_prompt] + state["messages"])
+    return {"messages": [res]}
 
 
 # define the conditional edge... 
