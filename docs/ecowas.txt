@@ -1,0 +1,1 @@
+echo The ECOWAS Trade Liberalisation Scheme provides for the elimination of customs duties on unprocessed goods. It has been in force since 1979. As of 2024, twelve member states have fully domesticated the scheme. Non-tariff barriers remain the most reported obstacle to intra-regional trade. > test_policy.txt
